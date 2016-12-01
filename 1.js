@@ -597,7 +597,7 @@ define(function(require){
 							moveRight: function(e) {
 								var me = this,
 									meEl = $(e.currentTarget);
-									// me是this,this指代
+									// me是this,this指代的是backbone中的元素,拥有独特的属性.
 								me.$body.find('.dialog-left-content input[class="selectGoodsName"]:checked').each(function(index,item){
 									var goodsName = $(this).closest("li").data("goodsname"),
 										goodsCode = $(this).closest("li").data("goodscode"),
@@ -658,7 +658,7 @@ define(function(require){
 								e.stopPropagation();
 							},
 							//删除右侧被选中的品相
-							deleteSelected: function(e) {
+						deleteSelected: function(e) {
 								var me = this,
 									meEl = $(e.currentTarget);
 								me.$body.find('.dialog-rightContent input.selectgoods:checked').each(function(){
